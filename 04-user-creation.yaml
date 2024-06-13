@@ -1,0 +1,12 @@
+---
+- hosts: all 
+  become: true   
+  tasks: 
+  -  name: Deploy a user called john on all dev server
+     user: 
+       name: elvis 
+       create_home:  true
+       shell: /bin/bash 
+       comment: "John is the senior Developer"
+       expires: -1 
+       password: "{{ 'Liontech2020' | password_hash('sha512', 'A512')   }}"

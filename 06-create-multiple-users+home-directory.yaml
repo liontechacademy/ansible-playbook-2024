@@ -1,0 +1,16 @@
+---
+- hosts: all 
+  become: true 
+  vars:
+    username: Alainn 
+    password:  Class25@2024
+  tasks:
+  - name: create users 
+    user: 
+      name: "{{username}}"
+      password: "{{password}}"
+      create_home: ""
+      state:  present
+    with_items:
+      - {'username':'ivoo', 'password':'liontech1990','homeDir':'true'}
+      - {'username':'jackk', 'password':'jack123!@#', 'homeDir':'true'}

@@ -1,0 +1,14 @@
+---
+- hosts: all 
+  become: true 
+  ignore_errors: true 
+  gather_facts: true 
+  tasks: 
+    - name: create a directory called class26 students on all server 
+      file: 
+        path: /home/ubuntu/class26   
+        state: directory
+        mode: 000
+        owner: ubuntu
+        group: ubuntu
+...

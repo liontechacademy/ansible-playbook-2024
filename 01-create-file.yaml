@@ -1,0 +1,14 @@
+--- 
+- hosts: all   
+  become: true    # become is used to assume root/admin previllages
+  tasks: 
+    - name: create a file on all dev servers
+      file:
+        path: /home/ubuntu/june12.yaml
+        state: touch  
+        mode: 0600
+        owner: ubuntu
+        group: elvis
+
+... 
+      

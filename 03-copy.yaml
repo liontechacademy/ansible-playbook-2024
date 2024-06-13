@@ -1,0 +1,11 @@
+---
+- hosts:   all  # ansible will deploy to all the servers
+  become: true
+  tasks:
+    - name: copy criminal files to client servers
+      copy: src=class24.yaml
+            dest=/home/ubuntu/criminal-case
+            owner=ubuntu 
+            group=ubuntu
+            mode=0700
+...

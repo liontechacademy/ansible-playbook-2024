@@ -1,0 +1,9 @@
+---
+- hosts:    all
+  gather_facts:
+  remote_user: ansible 
+  tasks:
+    - name: Test dev remote connections
+      ping:
+      remote_user: ansible 
+...

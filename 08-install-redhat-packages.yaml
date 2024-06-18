@@ -1,0 +1,7 @@
+- hosts: tomcat
+  become: yes 
+  ignore_errors: true 
+  tasks:
+    - name: install basic packages
+      yum:
+       name: ['git', 'tree', 'zip', 'unzip']

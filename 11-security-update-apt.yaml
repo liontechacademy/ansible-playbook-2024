@@ -1,0 +1,16 @@
+# This playbook should run security updates on specified servers. 
+
+---
+- hosts: qa
+  name: Deploy Security packages on all dev servers
+  become: yes     # become is used to assume admin previllages in ansible. 
+
+  tasks:
+    - name: Update system services or packages  on dev servers
+      apt:
+        update_cache: yes   
+    - name: Upgrade all packages to the latest version
+      apt: 
+        upgrade: safe                           #  sudo apt update  
+        update_cache: yes 
+... 

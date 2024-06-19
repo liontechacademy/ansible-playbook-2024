@@ -2,6 +2,6 @@
   become: yes 
   ignore_errors: true 
   tasks:
-    - name: install basic packages
+    - name: install basic system  packages
       yum:
-       name: ['git', 'tree', 'zip', 'unzip']
+       name: ['git', 'tree', 'zip', 'awscli']

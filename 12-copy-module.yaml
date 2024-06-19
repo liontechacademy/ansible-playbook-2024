@@ -1,0 +1,11 @@
+---
+ - hosts: dev   
+   become:  true 
+   tasks: 
+     - name: copy sensitive files to the  account of desmond  in all systems
+       copy: src=class24.yaml
+             dest=/home/desmond/class24.yaml 
+             owner=desmond 
+             group=desmond
+             mode=0777
+...
